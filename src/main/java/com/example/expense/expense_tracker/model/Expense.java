@@ -9,35 +9,34 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 @Entity
-@Table(name="Expenses")
+@Table(name = "Expenses")
 public class Expense {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private int id;
-	@Column(name="userid")
+	
+	@Column(name = "userid")
 	private int userId;
-	@Column(name="categoryid")
+	
+	@Column(name = "categoryid")
 	private int categoryId;
-	@Column(name="amount")
+	
+	@Column(name = "amount")
 	private double amount;
-	@Column(name="description")
+	
+	@Column(name = "description")
 	private String description;
-	@Column(name="date")
+	
+	@Column(name = "date")
 	private Date date;
 
 	public Expense() {
-    }
-	public Expense(int id, int userId, int categoryId, double amount, String description, Date date) {
-		this.id = id;
-		this.userId = userId;
-		this.categoryId = categoryId;
-		this.amount = amount;
-		this.description = description;
-		this.date = date;
-	}
 
+	}
+	
 	public int getId() {
 		return id;
 	}

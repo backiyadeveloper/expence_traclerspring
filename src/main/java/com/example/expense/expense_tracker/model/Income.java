@@ -8,33 +8,25 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="Income")
+@Table(name = "Income")
 public class Income {
-	
+
 	@Id
-	@Column(name="userid")
-	private int id;
-	
-	@Column(name="income")
+	@Column(name = "userid")
+	private int userId;
+
+	@Column(name = "income")
 	private double income;
 
-	// No-argument constructor
 	public Income() {
 	}
 
-	// Constructor with parameters
-	public Income(int id, double income) {
-		this.id = id;
-		this.income = income;
+	public int getUserId() {
+		return userId;
 	}
 
-	// Getters and Setters
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
+	public void setUserId(int id) {
+		userId = id;
 	}
 
 	public double getIncome() {
